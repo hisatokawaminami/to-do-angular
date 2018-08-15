@@ -6,6 +6,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { TaskListComponent } from './task-list/task-list.component';
 import { EditTaskComponent } from './edit-task/edit-task.component';
+import { NewTaskComponent } from './new-task/new-task.component';
 
 
 
@@ -13,7 +14,8 @@ import { EditTaskComponent } from './edit-task/edit-task.component';
   declarations: [
     AppComponent,
     TaskListComponent,
-    EditTaskComponent
+    EditTaskComponent,
+    NewTaskComponent
 
   ],
   imports: [

@@ -23,4 +23,11 @@ export class TaskListComponent {
       return "bg-info";
     }
   }
+  onChange(optionFromMenu) {
+    this.filterByCompleteness = optionFromMenu;
+  }
+  filterByCompleteness: string = "incompleteTasks";
+  toggleDone(clickedTask: Task, setCompleteness: boolean) {
+    clickedTask.done = setCompleteness;
+  }
 }

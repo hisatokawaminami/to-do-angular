@@ -1,3 +1,13 @@
+<select (change)="onChange($event.target.value)">
+  <option value="allTasks">All Tasks</option>
+  <option value="completedTasks">Completed Tasks</option>
+  <option value="incompleteTasks" selected="selected">Incomplete Tasks</option>
+</select>
+
 <ul>
-  <li [class]='priorityColor(currentTask)' *ngFor="let currentTask of childTaskList">{{currentTask.description}} <button (click)="editButtonClicked(currentTask)">Edit</button></li>
+  <li [class]='priorityColor(currentTask)' *ngFor="let currentTask of childTaskList | completeness:filterByCompleteness">{{currentTask.description}} {{currentTask.priority}}
+    <input type="checkbox" name="" value="" *ngIf="currentTask.done === true" checked (click)="toggleDone(currentTask, false)"/>
+    <input type="checkbox" name="" value="" *ngIf="currentTask.done === false" (click)="toggleDone(currentTask, true)"/>
+    <button (click)="editButtonClicked(currentTask)">Edit</button>
+  </li>
 </ul>
